@@ -1,11 +1,22 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 const SignInPage = () => {
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
+    const { data, error } = await authClient.signIn.email({
+    email: userData.email,
+    password: userData.password,
+    rememberMe: true,
+    callbackURL: "/",
+});
+    if(!error){
+        alert('Sign In successfully');
+    }
+
     };
 
   return (
