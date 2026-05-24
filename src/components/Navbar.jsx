@@ -1,9 +1,16 @@
+'use client'
 import { Button } from '@heroui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import logo from '@/assets/logo.png'
+import { authClient } from "@/lib/auth-client"
 const Navbar = () => {
+  const { data: session } = authClient.useSession()
+  const user = session?.user
+ 
+  
+
   return (
     <div className='flex justify-between items-center border-b p-4'>
       <Link href='/' >
@@ -22,7 +29,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div>
-        <Link href="/signin" ><Button>Login</Button></Link>
+        {
+          user ? <div className='flex items-center gap-3' > <h1>Hello, {user.name}</h1> <Button onClick={async()=>{await authClient.signOut()}} >Logout</Button> </div>:<Link href="/signin" ><Button>Login</Button></Link>
+        }
+        
+        
+         
+        
+        
       </div>
     </div>
   )
