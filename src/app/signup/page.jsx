@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import Link from "next/link";
 const SignUpPage = () => {
     const onSubmit = async (e) => {
     e.preventDefault();
@@ -13,14 +14,15 @@ const SignUpPage = () => {
     password: userData.password, // required
     
 });
-console.log(data);
+
 
 
     };
 
   return (
     <div className="flex min-h-screen justify-center items-center">
-       <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+       <Form className="flex w-96 flex-col gap-4 border rounded-2xl px-10 py-20" onSubmit={onSubmit}>
+         <h1 className="text-2xl font-bold text-gray-600">Sign Up</h1>
         <TextField
             isRequired
             name="name"
@@ -76,6 +78,10 @@ console.log(data);
           Reset
         </Button>
       </div>
+      <div className="flex items-center gap-1">
+            <span className="text-sm">Have an account?</span>
+            <Link  className="text-blue-500 text-sm hover:underline" href='/signin' >sign in</Link>
+            </div>
     </Form>
     </div>
   )

@@ -2,6 +2,8 @@
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import { FaGoogle } from "react-icons/fa";
+import Link from "next/link";
 const SignInPage = () => {
     const onSubmit = async(e) => {
     e.preventDefault();
@@ -13,16 +15,23 @@ const SignInPage = () => {
     rememberMe: true,
     callbackURL: "/",
 });
+
+
     if(!error){
         alert('Sign In successfully');
     }
 
     };
-
+const signIn = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+};
   return (
     <div className="flex min-h-screen justify-center items-center">
-       <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
-         
+        
+       <Form className="flex w-96 flex-col gap-4 border rounded-2xl px-10 py-20" onSubmit={onSubmit}>
+         <h1 className="text-2xl font-bold text-gray-600">Sign In</h1>
       <TextField
         isRequired
         name="email"
@@ -40,25 +49,12 @@ const SignInPage = () => {
       </TextField>
       <TextField
         isRequired
-        minLength={8}
         name="password"
         type="password"
-        validate={(value) => {
-          if (value.length < 8) {
-            return "Password must be at least 8 characters";
-          }
-          if (!/[A-Z]/.test(value)) {
-            return "Password must contain at least one uppercase letter";
-          }
-          if (!/[0-9]/.test(value)) {
-            return "Password must contain at least one number";
-          }
-          return null;
-        }}
+        
       >
         <Label>Password</Label>
         <Input placeholder="Enter your password" />
-        <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
         <FieldError />
       </TextField>
       <div className="flex gap-2">
@@ -70,6 +66,11 @@ const SignInPage = () => {
           Reset
         </Button>
       </div>
+      <div className="flex items-center gap-1">
+      <span className="text-sm">Havn't an account?</span>
+      <Link  className="text-blue-500 text-sm hover:underline" href='/signup' >sign up</Link>
+      </div>
+      <Button className="w-full" onClick={signIn} > <FaGoogle /> Sign in with Google</Button>
     </Form>
     </div>
   )
