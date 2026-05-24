@@ -13,8 +13,10 @@ import {
 } from "react-icons/fa";
 
 const HomePage = () => {
+    
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-10 max-w-7xl mx-auto px-6 py-12">
+    <div >
+      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
       <div>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           Welcome to Boi Bondhu - Your Ultimate Book Haven!
@@ -31,6 +33,14 @@ const HomePage = () => {
       </div>
        <div>
               <Image src={herobg} alt="Hero Background" width={700} height={700} />
+       </div>
+       </div>
+       <div className="max-w-7xl mx-auto px-6 py-12 mt-16">
+        <h2 className=" text-2xl font-bold text-center mb-6">Top Featured Books</h2>
+        <p className="text-center text-gray-600 mb-3">
+          Explore our handpicked selection of top featured books that are sure to
+          captivate your imagination and enrich your reading experience.
+        </p>
        </div>
     </div>
   );
