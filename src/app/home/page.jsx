@@ -30,7 +30,7 @@ const HomePage = () => {
         <p className="text-xl font-semibold mb-6">
           Find your Next Read
         </p>
-        <Button><BookOpen /> Browse Now</Button>
+        <Link href="/books" ><Button><BookOpen /> Browse Now</Button></Link>
       </div>
        <div>
               <Image src={herobg} alt="Hero Background" width={700} height={700} />

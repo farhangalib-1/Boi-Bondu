@@ -7,6 +7,7 @@ import logo from '@/assets/logo.png'
 import { authClient } from "@/lib/auth-client"
 import {ArrowRightToSquare} from '@gravity-ui/icons';
 import Marquee from "react-fast-marquee";
+import { usePathname } from 'next/navigation'
 const Navbar = () => {
   const newArrivals = [
   {
@@ -76,9 +77,12 @@ const Navbar = () => {
 ];
   const { data: session } = authClient.useSession()
   const user = session?.user
+  const pathName = usePathname();
  
   return (
+    
     <div>
+      
     <div className='flex justify-between items-center border-b p-4'>
       <Link href='/' >
       <div className='flex items-center'>
@@ -90,9 +94,9 @@ const Navbar = () => {
       </Link>
       <div>
         <ul className='flex items-baseline gap-4 font-semibold'>
-          <li><Link href='/'>Home</Link></li>
-          <li><Link href='/books'>All Books</Link></li>
-          <li><Link href='/profile'>My profile</Link></li>
+          <li><Link href='/' className={pathName=='/' ? "text-blue-500" : "" }>Home</Link></li>
+          <li><Link href='/books' className={pathName=='/books' ? "text-blue-500" : ""}>All Books</Link></li>
+          <li ><Link href='/profile'  >My profile</Link></li>
         </ul>
       </div>
       <div>

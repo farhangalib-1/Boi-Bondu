@@ -2,9 +2,14 @@
 import { Button } from '@heroui/react'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 
 const Singlebook = ({selectedBook}) => {
-    const [isBorrow, setIsBorrow] = useState(false)
+    const [isBorrow, setIsBorrow] = useState(false);
+     
+  if(isBorrow){
+    toast.success('Book is borrow successfully');
+  }
   return (
     <div className='flex flex-col md:flex-row justify-center gap-20  items-center mt-10'>
        
@@ -17,10 +22,11 @@ const Singlebook = ({selectedBook}) => {
         <h1>বর্ণনাঃ {selectedBook.description}</h1>
         <h1>ধরনঃ {selectedBook.category} </h1>
         <h1>Available: { isBorrow ? parseInt(selectedBook.available_quantity)-1 : selectedBook.available_quantity} books are left</h1>
-        <Button onClick={()=>{setIsBorrow(true)}}>{isBorrow ? 'Borrowed' : 'Borrow Now'}</Button>
+        <Button onClick={()=>{setIsBorrow(true);}}>{isBorrow ? 'Borrowed' : 'Borrow Now'}</Button>
         
       </div>
        
+       <ToastContainer />
     </div>
   )
 }
