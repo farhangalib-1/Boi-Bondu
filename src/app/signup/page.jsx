@@ -3,7 +3,9 @@ import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const SignUpPage = () => {
+  const router = useRouter();
     const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -15,10 +17,12 @@ const SignUpPage = () => {
     
 });
 
-
-
+  if(!error){
+    router.push("/")
+  }
     };
 
+    
   return (
     <div className="flex min-h-screen justify-center items-center">
        <Form className="flex w-96 flex-col gap-4 border rounded-2xl px-10 py-20" onSubmit={onSubmit}>
