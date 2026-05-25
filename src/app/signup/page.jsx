@@ -1,4 +1,5 @@
 "use client";
+import { ToastContainer, toast } from 'react-toastify';
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
@@ -20,13 +21,26 @@ const SignUpPage = () => {
     
     
 });
+const message = error?.message
+console.log(message)
+const success = () =>{
+        toast.success("Sign Up successfully")
+    }
+     const fail = ()=>{
+      toast.error('User already exists. Use another email')
+    }
 console.log(data, error)
   if(!error){
       signOut();
+      success();
     router.push("/")
   }
+  if(error){
+    fail();
+  }
     };
-
+    
+   
     
   return (
     <div className="flex min-h-screen justify-center items-center">
@@ -92,6 +106,7 @@ console.log(data, error)
             <Link  className="text-blue-500 text-sm hover:underline" href='/signin' >sign in</Link>
             </div>
     </Form>
+    <ToastContainer />
     </div>
   )
 }

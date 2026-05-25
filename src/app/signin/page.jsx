@@ -3,6 +3,7 @@ import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { FaGoogle } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 import Link from "next/link";
 const SignInPage = () => {
     const onSubmit = async(e) => {
@@ -15,10 +16,12 @@ const SignInPage = () => {
     rememberMe: true,
     callbackURL: "/",
 });
-
+const success = () =>{
+        toast.success("Sign in successfully")
+    }
 
     if(!error){
-        alert('Sign In successfully');
+        success();
     }
 
     };
@@ -72,6 +75,7 @@ const signIn = async () => {
       </div>
       <Button className="w-full" onClick={signIn} > <FaGoogle /> Sign in with Google</Button>
     </Form>
+    <ToastContainer />
     </div>
   )
 }
