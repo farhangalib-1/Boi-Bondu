@@ -3,6 +3,7 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import herobg from "@/assets/hero-bg.png"
+import {BookOpen} from '@gravity-ui/icons';
 import {
   FaFacebookF,
   FaInstagram,
@@ -29,7 +30,7 @@ const HomePage = () => {
         <p className="text-xl font-semibold mb-6">
           Find your Next Read
         </p>
-        <Button>Browse Now</Button>
+        <Button><BookOpen /> Browse Now</Button>
       </div>
        <div>
               <Image src={herobg} alt="Hero Background" width={700} height={700} />

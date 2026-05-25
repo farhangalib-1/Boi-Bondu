@@ -2,7 +2,7 @@ import { Button } from '@heroui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+import {Eye} from '@gravity-ui/icons';
 const Allbooks = ({ data }) => {
   return (
     <div className='border p-4 rounded-lg shadow-md '>
@@ -12,7 +12,7 @@ const Allbooks = ({ data }) => {
       <h1 className='mt-3'> <span className='font-bold'>বইয়ের নামঃ </span> {data.title}</h1>
       <p className='mt-1'> <span className='font-bold'>লেখকঃ </span> {data.author}</p>
       <Link href={`/book/${data.id}`}>
-        <Button className='mt-3 w-full'>View Details</Button>
+        <Button className='mt-3 w-full'><Eye/> View Details</Button>
       </Link>
     </div>
   )

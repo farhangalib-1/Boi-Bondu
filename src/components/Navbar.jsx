@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import logo from '@/assets/logo.png'
 import { authClient } from "@/lib/auth-client"
+import {ArrowRightToSquare} from '@gravity-ui/icons';
 const Navbar = () => {
   const { data: session } = authClient.useSession()
   const user = session?.user
@@ -30,7 +31,7 @@ const Navbar = () => {
       </div>
       <div>
         {
-          user ? <div className='flex items-center gap-3' > <h1>Hello, {user.name}</h1> <Button onClick={async()=>{await authClient.signOut()}} >Logout</Button> </div>:<Link href="/signin" ><Button>Login</Button></Link>
+          user ? <div className='flex items-center gap-3' > <h1>Hello, {user.name}</h1> <Button onClick={async()=>{await authClient.signOut()}} >Logout</Button> </div>:<Link href="/signin" ><Button><ArrowRightToSquare /> Login</Button></Link>
         }
         
         
