@@ -5,7 +5,7 @@ import Topbookcard from "@/components/Topbookcard";
 
 export default async function Home() {
   const res = await fetch("https://boi-bondu-app.vercel.app/data.json");
-  const data = await res.json();
+  const  data = await res.json();
   const topBooks = data.slice(0, 4);
   console.log(data);
   return (
