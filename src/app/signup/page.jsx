@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 const SignUpPage = () => {
   const router = useRouter();
+  const signOut = async()=>{
+    await authClient.signOut();
+  }
     const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -15,9 +18,11 @@ const SignUpPage = () => {
     email: userData.email,
     password: userData.password, // required
     
+    
 });
-
+console.log(data, error)
   if(!error){
+      signOut();
     router.push("/")
   }
     };
