@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Boi Bondhu 📚
 
-## Getting Started
+A modern and responsive online book borrowing platform where users can explore books, search by category, and borrow books digitally. The platform provides a smooth and secure experience using modern web technologies like Next.js, BetterAuth, MongoDB, and Tailwind CSS.
 
-First, run the development server:
+---
+
+## 🌐 Live URL
+
+[Boi Bondu](https://boi-bondu.vercel.app/)
+
+---
+
+## 🎯 Project Purpose
+
+The purpose of **Boi Bondhu** is to digitize the traditional library experience by creating a seamless online platform for borrowing books. Users can easily browse books, explore categories, and manage their profiles securely.
+
+---
+
+## ✨ Key Features
+
+- 🔐 Authentication System using BetterAuth
+- 📚 Browse and Search Books
+- 🔍 Search Books by Title
+- 🧠 Category Filtering (Story, Tech, Science)
+- 👤 User Profile Management
+- ✏️ Update User Information
+- 📖 Featured Books Section
+- 🔥 Trending Books Section
+- 🎯 Mood-Based Book Discovery
+- 📱 Fully Responsive Design
+- 🌙 Modern UI with Tailwind CSS & HeroUI
+- 🚀 Fast Performance with Next.js
+- ☁️ Hosted on Vercel
+- 🔑 Google Login Authentication
+- 🎞️ Smooth Animations using Animate.css / SwiperJS
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- HeroUI / DaisyUI
+
+### Backend & Database
+- MongoDB
+- BetterAuth
+
+### Deployment
+- Vercel
+
+---
+
+## 📦 NPM Packages Used
+
+```bash
+npm install next react react-dom
+npm install tailwindcss
+npm install @heroui/react
+npm install better-auth
+npm install mongodb
+npm install swiper
+npm install react-icons
+npm install react-hot-toast
+npm install animate.css
+```
+
+
+
+---
+
+## 🚀 Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/your-username/boi-bondhu.git
+```
+
+Go to the project directory
+
+```bash
+cd boi-bondhu
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📂 Pages Included
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🏠 Home Page
+- 📚 All Books Page
+- 📖 Book Details Page
+- 🔐 Login Page
+- 📝 Register Page
+- 👤 My Profile Page
+- ✏️ Update Profile Page
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🖼️ Home Page Sections
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ✅ Banner Section
+Large hero section with:
+- “Find Your Next Read”
+- Browse Now button
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ✅ Featured Books
+Top featured books fetched from server/local JSON data.
 
-## Deploy on Vercel
+### ✅ Mood-Based Discovery
+Users can discover books based on mood:
+- Relax & Chill
+- Mystery & Thriller
+- Learn Something
+- Motivation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ Trending in Boi Bondhu
+Shows the most popular borrowed books.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ✅ Customer Reviews
+Real user reviews with ratings.
+
+---
+
+## 🔐 Authentication Features
+
+- Email & Password Login
+- User Registration
+- Google Authentication
+- Protected Private Routes
+- Logout System
+- Update User Profile
+
+---
+
+## 📱 Responsive Design
+
+The website is fully responsive for:
+- Mobile Devices
+- Tablets
+- Desktop Screens
+
+---
+
+## 👨‍💻 Author
+
+### Galib
+
+---
+
