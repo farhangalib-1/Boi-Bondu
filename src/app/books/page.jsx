@@ -10,10 +10,10 @@ const BooksPage = async () => {
       <p className='text-lg text-gray-700 text-center px-9 mt-4'>Discover a wide collection of books across Story, Tech, and Science categories. Explore timeless classics, modern programming guides, and fascinating scientific discoveries—all in one place. Find your next favorite read and borrow books anytime.</p>
       <div className='w-3/12 mx-auto'>
       <SearchField name="search">
-      <Label>Search</Label>
+      <h1 className='text-center mt-5 font-bold'>Search your book</h1>
       <SearchField.Group>
         <SearchField.SearchIcon />
-        <SearchField.Input className="w-70" placeholder="Search by book title" />
+        <SearchField.Input className="w-100" placeholder="Search by book title" />
         <SearchField.ClearButton />
       </SearchField.Group>
     </SearchField>
