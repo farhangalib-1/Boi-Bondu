@@ -106,7 +106,7 @@ const Navbar = () => {
       <div className='font-bold border px-4 rounded-lg' >
         New Arrival
       </div>
-    <Marquee>
+    <Marquee pauseOnHover={true}>
       
       {
         newArrivals.map(el=><div> <h1 className='mr-20'>{el.message} </h1> </div>)
